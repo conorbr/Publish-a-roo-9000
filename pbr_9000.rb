@@ -4,9 +4,6 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 		@bids = para " ", hidden: true
 		@destination = para " ", hidden: true
 
-
-
-
 		para "Enter Locale:"
 		@input_1 = edit_line do |a|
 			@locale.text = @input_1.text
@@ -87,4 +84,5 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 		system("start https://github.com/conorbr/Publish-a-roo-9000#publish-a-roo-9000")
   end
 )
+
 end
