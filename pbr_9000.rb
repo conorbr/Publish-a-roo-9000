@@ -65,7 +65,7 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 					bids = @bids.text.split(" ")
 					bids.each do |bid|
 						locale = @locale.text.to_s
-					system("start https://www.microsoft.com/#{locale}/store/d/xbox-one-x-1-tb-konsoll/#{bid}")
+					system("start https://www.microsoft.com/#{locale}/store/d/pbr_9000/#{bid}")
 						end
 
 			else
