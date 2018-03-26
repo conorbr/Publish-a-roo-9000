@@ -5,13 +5,13 @@ puts the fun back in large repetitive ucx tasks
 
 ## setup
 click the big green "clone or download" button on the right
-![alt text](https://imgur.com/Ka3V5BV)
+![alt text](http://imgur.com/Ka3V5BV)
 
 Download as zip
-![alt text](https://imgur.com/qFFYwFR)
+![alt text](http://imgur.com/qFFYwFR)
 
 extract to somewhere handy like the desktop
-![alt text](https://imgur.com/CVvPVIU)
+![alt text](http://imgur.com/CVvPVIU)
 
 and you're good to go. after a short initial setup the program is ready to use
 
