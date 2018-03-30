@@ -53,15 +53,30 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 		end
 
 		@button = button("open link", margin: 40) do
-			if @multi_locale.checked?
-				locales = @locale.text.split(" ")
-				locales.each do |locale|
+			if @multi_locale.checked? && @destination.text.to_s != "live"
+					locales = @locale.text.split(" ")
+					locales.each do |locale|
 					bid = @bids.text.to_s
 					destination = @destination.text.to_s
-				#system("start https://www.microsoft.com/#{locale}/#{bid}/b/#{destination}")
-				system("start https://sftools.trafficmanager.net/store/#{locale}/products/#{bid}/#{destination}")
+					#system("start https://www.microsoft.com/#{locale}/#{bid}/b/#{destination}")
+					system("start https://sftools.trafficmanager.net/store/#{locale}/products/#{bid}/#{destination}")
+				end
+			elsif @destination.text.to_s == "live"
+					if @multi_locale.checked?
+						locales = @locale.text.split(" ")
+						locales.each do |locale|
+						bid = @bids.text.to_s
+						destination = @destination.text.to_s
+						#system("start https://www.microsoft.com/#{locale}/#{bid}/b/#{destination}")
+						system("start https://www.microsoft.com/#{locale}/store/d/pbr_9000/#{bid}")
 					end
-				elsif @destination.text.to_s == "live"
+						else
+							bids = @bids.text.split(" ")
+							bids.each do |bid|
+							locale = @locale.text.to_s
+							system("start https://www.microsoft.com/#{locale}/store/d/pbr_9000/#{bid}")
+							end
+						end
 					bids = @bids.text.split(" ")
 					bids.each do |bid|
 						locale = @locale.text.to_s
