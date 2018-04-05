@@ -20,7 +20,7 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 		end
 
 		 para "Choose a destination:"
-		@input_3 = list_box items: ["product storytelling", "pdp storytelling", "live site", "global settings", "market data", "bundle data", "assets", "pdp history", "pdp history" , "broadcast tempalte", "preview", "publishing", "notes" ] do |c|
+		@input_3 = list_box items: ["product storytelling", "pdp storytelling", "live site", "market data", "published products", "global settings",  "bundle data", "assets", "pdp history", "pdp history" , "broadcast tempalte", "preview", "publishing", "notes" ] do |c|
 			where_to = @input_3.text
 			case where_to
 			when "pdp storytelling"
@@ -47,6 +47,8 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 				@destination.text = "publish"
 			when "notes"
 				@destination.text = "notes"
+			when "published products"
+				@destination.text = "published_products"
 			else
 				@destination.text = "storytelling"
 			end
@@ -81,6 +83,12 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 					bids.each do |bid|
 						locale = @locale.text.to_s
 					system("start https://www.microsoft.com/#{locale}/store/d/pbr_9000/#{bid}")
+						end
+					elsif @destination.text.to_s == "published_products"
+						bids = @bids.text.split(" ")
+						bids.each do |bid|
+						locale = @locale.text.to_s
+						system("start https://sftools.trafficmanager.net/store/#{locale}/published-products/#{bid}/storytelling")
 						end
 
 			else
