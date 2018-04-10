@@ -1,5 +1,5 @@
 Shoes.app(title: "Publish-a-roo 9000", width: 280) do
-	stack(margin: 40) do
+	stack(margin: 30) do
 		@locale = para " ", hidden: true
 		@bids = para " ", hidden: true
 		@destination = para " ", hidden: true
@@ -85,7 +85,6 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 						locale = @locale.text.to_s
 						system("start https://sftools.trafficmanager.net/store/#{locale}/published-products/#{bid}/storytelling")
 						end
-
 			else
 			bids = @bids.text.split(" ")
 			bids.each do |bid|
