@@ -55,7 +55,7 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 		end
 
 		@button = button("open link", margin: 40) do
-			if @multi_locale.checked? && @destination.text.to_s != "live"
+			if @multi_locale.checked? && @destination.text.to_s != "live" && @destination.text.to_s != "published_products"
 					locales = @locale.text.split(" ")
 					locales.each do |locale|
 					bid = @bids.text.to_s
@@ -80,11 +80,21 @@ Shoes.app(title: "Publish-a-roo 9000", width: 280) do
 							end
 						end
 					elsif @destination.text.to_s == "published_products"
+						if @multi_locale.checked?
+							locales = @locale.text.split(" ")
+							locales.each do |locale|
+							bid = @bids.text.to_s
+							destination = @destination.text.to_s
+							#system("start https://www.microsoft.com/#{locale}/#{bid}/b/#{destination}")
+							system("start https://sftools.trafficmanager.net/store/#{locale}/published-products/#{bid}/storytelling")
+						end
+						else
 						bids = @bids.text.split(" ")
 						bids.each do |bid|
 						locale = @locale.text.to_s
 						system("start https://sftools.trafficmanager.net/store/#{locale}/published-products/#{bid}/storytelling")
 						end
+					end
 			else
 			bids = @bids.text.split(" ")
 			bids.each do |bid|
